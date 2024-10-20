@@ -197,6 +197,7 @@ public class GenerateWindow extends JPanel {
 					investFields.txnType = InvestTxnType.MISCINC;
 					investFields.security = Main.mapAccounts.get(secLine.getTicker());
 					investFields.hasSecurity = true;
+          investFields.payee = secLine.getDescription();
 					investFields.storeFields(ptTran);
 					transModel.addLine(new GenerateTransaction(Constants.PARENT,acct, secLine.getDate(),
 							secLine.getValue(),"","",
@@ -219,6 +220,7 @@ public class GenerateWindow extends JPanel {
 					investFields.txnType = InvestTxnType.DIVIDEND;
 					investFields.security = Main.mapAccounts.get(secLine.getTicker());
 					investFields.hasSecurity = true;
+          investFields.payee = secLine.getDescription();
 					investFields.storeFields(ptTran);
 					transModel.addLine(new GenerateTransaction(Constants.PARENT,
 							acct, //account
@@ -246,6 +248,7 @@ public class GenerateWindow extends JPanel {
 					investFields.txnType = InvestTxnType.MISCEXP;
 					investFields.security = Main.mapAccounts.get(secLine.getTicker());
 					investFields.hasSecurity = true;
+          investFields.payee = secLine.getDescription();
 					investFields.storeFields(ptTran);
 					transModel.addLine(new GenerateTransaction(Constants.PARENT,acct, secLine.getDate(),
 							secLine.getValue()*-1,"","",
@@ -266,6 +269,7 @@ public class GenerateWindow extends JPanel {
 					investFields.date = secLine.getDate();
 					investFields.taxDate= secLine.getDate();
 					investFields.txnType = InvestTxnType.BANK;
+          investFields.payee = secLine.getDescription();
 					investFields.storeFields(ptTran);
 					transModel.addLine(new GenerateTransaction(Constants.PARENT,acct, secLine.getDate(),
 							secLine.getValue(), secLine.getDescription(),"",AbstractTxn.TRANSFER_TYPE_BANK, secLine.getTranType(),ptTran.getParentTxn()));
@@ -281,6 +285,7 @@ public class GenerateWindow extends JPanel {
 					investFields.date = secLine.getDate();
 					investFields.taxDate= secLine.getDate();
 					investFields.txnType = InvestTxnType.BANK;
+          investFields.payee = secLine.getDescription();
 					investFields.storeFields(ptTran);
 					transModel.addLine(new GenerateTransaction(Constants.PARENT,acct, secLine.getDate(),
 							secLine.getValue(), secLine.getDescription(),"",
