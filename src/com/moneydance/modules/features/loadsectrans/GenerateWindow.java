@@ -318,7 +318,7 @@ public class GenerateWindow extends JPanel {
 					Double unitConvert = secLine.getUnit();
 					for (int i=0;i<securityCurrency.getDecimalPlaces();i++)
 						unitConvert = unitConvert*10.0;
-					investFields.shares = unitConvert.longValue();
+					investFields.shares = Math.round(unitConvert);
 					investFields.secCurr= securityCurrency;
 					investFields.date = secLine.getDate();
 					investFields.taxDate = secLine.getDate();
